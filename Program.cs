@@ -12,9 +12,12 @@ namespace TrainClient
 {
     static class Program
     {
+        public static RegisterPanel openedRegisterPanel;
+        public static basePanel openedBasePanel;
 
         const int PORT_NO = 8080;
-        const string SERVER_IP = "127.0.0.1";
+        public static string SERVER_IP = "127.0.0.1";
+        public static int tcpPort;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -30,11 +33,12 @@ namespace TrainClient
             client.Send(new byte[] { 1, 2, 3, 4, 5 }, 5);
 
             // then receive tcp-port
-            var receivedPort = client.Receive(ref ep);
+            tcpPort = BitConverter.ToInt32(client.Receive(ref ep), 0);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new basePanel());
+            openedBasePanel = new basePanel();
+            Application.Run(openedBasePanel);
 
         }
     }

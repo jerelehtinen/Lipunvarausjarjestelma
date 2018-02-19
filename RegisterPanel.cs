@@ -21,9 +21,12 @@ namespace TrainClient
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            basePanel logIn = new basePanel();
-            logIn.ShowDialog();
+            //Piilotetaan rekisteröitymispaneeli
+            Program.openedRegisterPanel.Visible = false;
+            //...ja tuodaan kirjautumispaneeli takaisin näkyviin
+            Program.openedBasePanel.Visible = true;
+
+            Program.openedRegisterPanel.Close();
         }
 
 

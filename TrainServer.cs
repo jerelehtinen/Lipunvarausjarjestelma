@@ -11,9 +11,9 @@ namespace TrainServer
 {
     class TrainServer
     {
-        const int SERVER_PORT_NO = 8080;
+        static int SERVER_PORT_NO = 8080;
         //const int CLIENT_PORT_NO = 3000;
-        const string SERVER_IP = "127.0.0.1";
+        public static string SERVER_IP = "127.0.0.1";
 
         public static void Main(String[] args)
         {
@@ -27,12 +27,13 @@ namespace TrainServer
             {
                 var remoteEP = new IPEndPoint(IPAddress.Any, 11000);
                 var data = udpServer.Receive(ref remoteEP); // listen on port 11000
-                Console.Write("Connection from client, sending back port no: " + (11000+CLIENT_COUNT));
+                Console.WriteLine("Connection from client, sending back port no: " + (11000+CLIENT_COUNT));
 
                 //Lähetetään tcp-portti
                 byte[] tcpPort = BitConverter.GetBytes(11000 + CLIENT_COUNT);
                 udpServer.Send(tcpPort, tcpPort.Length, remoteEP); // reply back
-
+                ServerThread newThread = new ServerThread(11000 + CLIENT_COUNT);
+                CLIENT_COUNT++;
             }
 
         }
