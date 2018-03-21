@@ -21,10 +21,6 @@ namespace TrainClient2.UserControls
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void routeUC_Load(object sender, EventArgs e)
         {
@@ -35,7 +31,7 @@ namespace TrainClient2.UserControls
 
         }
 
-        private void startBTN_Click(object sender, EventArgs e)
+        private void departureOkBTN_Click(object sender, EventArgs e)
         {
             //Luetaan valittu lahtopaikka
             departureCity = startCB.SelectedItem.ToString();

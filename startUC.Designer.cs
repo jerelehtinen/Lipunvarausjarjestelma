@@ -57,7 +57,7 @@
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.registerBtn.Location = new System.Drawing.Point(490, 282);
+            this.registerBtn.Location = new System.Drawing.Point(606, 178);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(156, 55);
             this.registerBtn.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.loginBtn.Location = new System.Drawing.Point(490, 199);
+            this.loginBtn.Location = new System.Drawing.Point(402, 178);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(156, 55);
             this.loginBtn.TabIndex = 5;
@@ -84,13 +84,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Harrington", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(291, 68);
+            this.label1.Location = new System.Drawing.Point(25, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(543, 39);
+            this.label1.Size = new System.Drawing.Size(605, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tervetuloa varaamaan junalippuja!";
+            this.label1.Text = "Kirjaudu tai rekisteröidy aloittaaksesi";
             // 
             // startUC
             // 

@@ -31,31 +31,31 @@ namespace TrainClient2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.upPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            Form1.panel4 = new System.Windows.Forms.Panel();
-            Form1.startUC1 = new TrainClient2.UserControls.startUC();
-            this.panel1.SuspendLayout();
+            this.updatePanel = new System.Windows.Forms.Panel();
+            this.startUC1 = new TrainClient2.UserControls.startUC();
+            this.upPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            Form1.panel4.SuspendLayout();
+            this.updatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // upPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1140, 42);
-            this.panel1.TabIndex = 0;
+            this.upPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.upPanel.Controls.Add(this.pictureBox2);
+            this.upPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.upPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.upPanel.Location = new System.Drawing.Point(0, 0);
+            this.upPanel.Name = "upPanel";
+            this.upPanel.Size = new System.Drawing.Size(1140, 42);
+            this.upPanel.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -69,14 +69,14 @@ namespace TrainClient2
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // panel2
+            // bottomPanel
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 549);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1140, 76);
-            this.panel2.TabIndex = 1;
+            this.bottomPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 549);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(1140, 76);
+            this.bottomPanel.TabIndex = 1;
             // 
             // panel3
             // 
@@ -109,66 +109,57 @@ namespace TrainClient2
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
+            // updatePanel
             // 
-            Form1.panel4.Controls.Add(Form1.startUC1);
-            Form1.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            Form1.panel4.Location = new System.Drawing.Point(0, 137);
-            Form1.panel4.Name = "panel5";
-            Form1.panel4.Size = new System.Drawing.Size(1140, 412);
-            Form1.panel4.TabIndex = 3;
+            this.updatePanel.Controls.Add(this.startUC1);
+            this.updatePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updatePanel.Location = new System.Drawing.Point(0, 137);
+            this.updatePanel.Name = "updatePanel";
+            this.updatePanel.Size = new System.Drawing.Size(1140, 412);
+            this.updatePanel.TabIndex = 3;
             // 
             // startUC1
             // 
-            Form1.startUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            Form1.startUC1.Location = new System.Drawing.Point(0, 0);
-            Form1.startUC1.Name = "startUC2";
-            Form1.startUC1.Size = new System.Drawing.Size(1140, 412);
-            Form1.startUC1.TabIndex = 0;
-            //
-            //bookingUC1
-            //
-            Form1.bookingUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            Form1.bookingUC1.Location = new System.Drawing.Point(0, 0);
-            Form1.bookingUC1.Name = "bookingUC1";
-            Form1.bookingUC1.Size = new System.Drawing.Size(1140, 412);
-            Form1.bookingUC1.TabIndex = 0;
+            this.startUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startUC1.Location = new System.Drawing.Point(0, 0);
+            this.startUC1.Name = "startUC1";
+            this.startUC1.Size = new System.Drawing.Size(1140, 412);
+            this.startUC1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1140, 625);
-            this.Controls.Add(Form1.panel4);
+            this.Controls.Add(this.updatePanel);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bottomPanel);
+            this.Controls.Add(this.upPanel);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.upPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            Form1.panel4.ResumeLayout(false);
+            this.updatePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel upPanel;
+        private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
 
-        public static UserControls.bookingUC bookingUC1 = new UserControls.bookingUC();
-        public static Panel panel4;
-        public static UserControls.startUC startUC1;
+        private Panel updatePanel;
+        private UserControls.startUC startUC1;
     }
 }
 
