@@ -12,6 +12,12 @@ namespace TrainClient2
 {
     public partial class Form1 : Form
     {
+
+        protected static Boolean startUCVisible;
+        protected static Boolean bookingUCVisible;
+        //Asetukset ja matkan varaus napit toimivat vain kun tämä on true
+        public static Boolean loginOk = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -23,22 +29,25 @@ namespace TrainClient2
             Application.Exit();
 
         }
+        
+        
 
-        private void button2_Click(object sender, EventArgs e)
+        private void updatePanel_Paint(object sender, PaintEventArgs e)
         {
-            /*
-            panel4.Controls.Remove(bookingUC1);
-            panel4.Controls.Add(startUC1);*/
-            
+            startUC1.BringToFront();
+        }
+
+        private void settingsBTN_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bookTripBTN_Click(object sender, EventArgs e)
         {
-            /*
-            panel4.Controls.Add(bookingUC1);
-            panel4.Controls.Remove(startUC1);*/
+            if (loginOk)
+            {
+                bookingUC1.BringToFront();
+            }
         }
-
     }
 }

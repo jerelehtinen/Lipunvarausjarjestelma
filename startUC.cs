@@ -12,6 +12,7 @@ namespace TrainClient2.UserControls
 {
     public partial class startUC : UserControl
     {
+
         public startUC()
         {
             InitializeComponent();
@@ -24,9 +25,9 @@ namespace TrainClient2.UserControls
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            /*Form1.panel4.Controls.Remove(Form1.startUC1);
-            Form1.panel4.Controls.Add(Form1.bookingUC1);*/
-
+            //Tähän tarkastus että kirjautumistiedot ok
+            //jos ok
+            Form1.loginOk = true;
         }
     }
 }

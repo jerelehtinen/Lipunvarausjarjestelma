@@ -34,6 +34,7 @@
             this.arrivalRadioB = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.scheduleOkBTN = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +53,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(156, 158);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(134, 22);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // departureRadioB
@@ -96,9 +97,19 @@
             this.scheduleOkBTN.Text = "Valitse";
             this.scheduleOkBTN.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(384, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 411);
+            this.panel1.TabIndex = 12;
+            // 
             // scheduleUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.scheduleOkBTN);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.arrivalRadioB);
@@ -120,5 +131,6 @@
         private System.Windows.Forms.RadioButton arrivalRadioB;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button scheduleOkBTN;
+        private System.Windows.Forms.Panel panel1;
     }
 }

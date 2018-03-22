@@ -37,6 +37,7 @@
             this.upPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.logOutBTN = new System.Windows.Forms.Button();
             this.priceLBL = new System.Windows.Forms.Label();
             this.arrivalTimeLBL = new System.Windows.Forms.Label();
             this.departureTimeLBL = new System.Windows.Forms.Label();
@@ -44,8 +45,11 @@
             this.arriveLBL = new System.Windows.Forms.Label();
             this.departureLBL = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.confirmUC1 = new TrainClient2.UserControls.confirmUC();
+            this.pickUC1 = new TrainClient2.UserControls.pickUC();
+            this.scheduleUC1 = new TrainClient2.UserControls.scheduleUC();
             this.routeUC1 = new TrainClient2.UserControls.routeUC();
-            this.logOutBTN = new System.Windows.Forms.Button();
+            this.refreshBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.infoPanel.SuspendLayout();
@@ -71,19 +75,20 @@
             this.confirmBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmBTN.ForeColor = System.Drawing.Color.White;
-            this.confirmBTN.Location = new System.Drawing.Point(20, 225);
+            this.confirmBTN.Location = new System.Drawing.Point(20, 309);
             this.confirmBTN.Name = "confirmBTN";
-            this.confirmBTN.Size = new System.Drawing.Size(124, 75);
+            this.confirmBTN.Size = new System.Drawing.Size(124, 103);
             this.confirmBTN.TabIndex = 4;
             this.confirmBTN.Text = "Vahvista";
             this.confirmBTN.UseVisualStyleBackColor = true;
+            this.confirmBTN.Click += new System.EventHandler(this.confirmBTN_Click);
             // 
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.SidePanel.Location = new System.Drawing.Point(0, 0);
             this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(20, 75);
+            this.SidePanel.Size = new System.Drawing.Size(20, 103);
             this.SidePanel.TabIndex = 0;
             // 
             // pickBTN
@@ -92,13 +97,13 @@
             this.pickBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pickBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickBTN.ForeColor = System.Drawing.Color.White;
-            this.pickBTN.Location = new System.Drawing.Point(20, 150);
+            this.pickBTN.Location = new System.Drawing.Point(20, 206);
             this.pickBTN.Name = "pickBTN";
-            this.pickBTN.Size = new System.Drawing.Size(124, 75);
+            this.pickBTN.Size = new System.Drawing.Size(124, 103);
             this.pickBTN.TabIndex = 3;
             this.pickBTN.Text = "Matka ja paikat";
             this.pickBTN.UseVisualStyleBackColor = true;
-            this.pickBTN.Click += new System.EventHandler(this.confirmBTN_Click);
+            this.pickBTN.Click += new System.EventHandler(this.pickBTN_Click);
             // 
             // scheduleBTN
             // 
@@ -106,9 +111,9 @@
             this.scheduleBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.scheduleBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleBTN.ForeColor = System.Drawing.Color.White;
-            this.scheduleBTN.Location = new System.Drawing.Point(20, 75);
+            this.scheduleBTN.Location = new System.Drawing.Point(20, 103);
             this.scheduleBTN.Name = "scheduleBTN";
-            this.scheduleBTN.Size = new System.Drawing.Size(124, 75);
+            this.scheduleBTN.Size = new System.Drawing.Size(124, 103);
             this.scheduleBTN.TabIndex = 1;
             this.scheduleBTN.Text = "Aikataulu";
             this.scheduleBTN.UseVisualStyleBackColor = true;
@@ -122,7 +127,7 @@
             this.routeBTN.ForeColor = System.Drawing.Color.White;
             this.routeBTN.Location = new System.Drawing.Point(20, 0);
             this.routeBTN.Name = "routeBTN";
-            this.routeBTN.Size = new System.Drawing.Size(124, 75);
+            this.routeBTN.Size = new System.Drawing.Size(124, 103);
             this.routeBTN.TabIndex = 0;
             this.routeBTN.Text = "Reitti";
             this.routeBTN.UseVisualStyleBackColor = true;
@@ -139,6 +144,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.confirmUC1);
+            this.panel2.Controls.Add(this.pickUC1);
+            this.panel2.Controls.Add(this.scheduleUC1);
             this.panel2.Controls.Add(this.routeUC1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(144, 1);
@@ -148,6 +156,7 @@
             // 
             // infoPanel
             // 
+            this.infoPanel.Controls.Add(this.refreshBTN);
             this.infoPanel.Controls.Add(this.logOutBTN);
             this.infoPanel.Controls.Add(this.priceLBL);
             this.infoPanel.Controls.Add(this.arrivalTimeLBL);
@@ -161,6 +170,17 @@
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(611, 411);
             this.infoPanel.TabIndex = 3;
+            // 
+            // logOutBTN
+            // 
+            this.logOutBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBTN.Location = new System.Drawing.Point(460, 364);
+            this.logOutBTN.Name = "logOutBTN";
+            this.logOutBTN.Size = new System.Drawing.Size(137, 35);
+            this.logOutBTN.TabIndex = 7;
+            this.logOutBTN.Text = "Kirjaudu ulos";
+            this.logOutBTN.UseVisualStyleBackColor = true;
             // 
             // priceLBL
             // 
@@ -232,6 +252,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Matkan tiedot";
             // 
+            // confirmUC1
+            // 
+            this.confirmUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.confirmUC1.Location = new System.Drawing.Point(0, 0);
+            this.confirmUC1.Name = "confirmUC1";
+            this.confirmUC1.Size = new System.Drawing.Size(385, 411);
+            this.confirmUC1.TabIndex = 3;
+            // 
+            // pickUC1
+            // 
+            this.pickUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pickUC1.Location = new System.Drawing.Point(0, 0);
+            this.pickUC1.Name = "pickUC1";
+            this.pickUC1.Size = new System.Drawing.Size(385, 411);
+            this.pickUC1.TabIndex = 2;
+            // 
+            // scheduleUC1
+            // 
+            this.scheduleUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scheduleUC1.Location = new System.Drawing.Point(0, 0);
+            this.scheduleUC1.Name = "scheduleUC1";
+            this.scheduleUC1.Size = new System.Drawing.Size(385, 411);
+            this.scheduleUC1.TabIndex = 1;
+            // 
             // routeUC1
             // 
             this.routeUC1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -240,16 +284,17 @@
             this.routeUC1.Size = new System.Drawing.Size(385, 411);
             this.routeUC1.TabIndex = 0;
             // 
-            // logOutBTN
+            // refreshBTN
             // 
-            this.logOutBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logOutBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutBTN.Location = new System.Drawing.Point(460, 364);
-            this.logOutBTN.Name = "logOutBTN";
-            this.logOutBTN.Size = new System.Drawing.Size(137, 35);
-            this.logOutBTN.TabIndex = 7;
-            this.logOutBTN.Text = "Kirjaudu ulos";
-            this.logOutBTN.UseVisualStyleBackColor = true;
+            this.refreshBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBTN.Location = new System.Drawing.Point(317, 364);
+            this.refreshBTN.Name = "refreshBTN";
+            this.refreshBTN.Size = new System.Drawing.Size(137, 35);
+            this.refreshBTN.TabIndex = 8;
+            this.refreshBTN.Text = "Päivitä";
+            this.refreshBTN.UseVisualStyleBackColor = true;
+            this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click);
             // 
             // bookingUC
             // 
@@ -288,5 +333,9 @@
         private System.Windows.Forms.Button confirmBTN;
         private routeUC routeUC1;
         private System.Windows.Forms.Button logOutBTN;
+        private confirmUC confirmUC1;
+        private pickUC pickUC1;
+        private scheduleUC scheduleUC1;
+        private System.Windows.Forms.Button refreshBTN;
     }
 }

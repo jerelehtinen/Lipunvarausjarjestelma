@@ -38,6 +38,9 @@ namespace TrainClient2
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.updatePanel = new System.Windows.Forms.Panel();
+            this.settingsBTN = new System.Windows.Forms.Button();
+            this.bookTripBTN = new System.Windows.Forms.Button();
+            this.bookingUC1 = new TrainClient2.UserControls.bookingUC();
             this.startUC1 = new TrainClient2.UserControls.startUC();
             this.upPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,6 +83,8 @@ namespace TrainClient2
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.bookTripBTN);
+            this.panel3.Controls.Add(this.settingsBTN);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -111,12 +116,52 @@ namespace TrainClient2
             // 
             // updatePanel
             // 
+            this.updatePanel.Controls.Add(this.bookingUC1);
             this.updatePanel.Controls.Add(this.startUC1);
             this.updatePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updatePanel.Location = new System.Drawing.Point(0, 137);
             this.updatePanel.Name = "updatePanel";
             this.updatePanel.Size = new System.Drawing.Size(1140, 412);
             this.updatePanel.TabIndex = 3;
+            this.updatePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.updatePanel_Paint);
+            // 
+            // settingsBTN
+            // 
+            this.settingsBTN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.settingsBTN.FlatAppearance.BorderSize = 0;
+            this.settingsBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsBTN.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.settingsBTN.Location = new System.Drawing.Point(1016, 0);
+            this.settingsBTN.Name = "settingsBTN";
+            this.settingsBTN.Size = new System.Drawing.Size(124, 95);
+            this.settingsBTN.TabIndex = 5;
+            this.settingsBTN.Text = "Asetukset";
+            this.settingsBTN.UseVisualStyleBackColor = true;
+            this.settingsBTN.Click += new System.EventHandler(this.settingsBTN_Click);
+            // 
+            // bookTripBTN
+            // 
+            this.bookTripBTN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bookTripBTN.FlatAppearance.BorderSize = 0;
+            this.bookTripBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bookTripBTN.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTripBTN.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.bookTripBTN.Location = new System.Drawing.Point(892, 0);
+            this.bookTripBTN.Name = "bookTripBTN";
+            this.bookTripBTN.Size = new System.Drawing.Size(124, 95);
+            this.bookTripBTN.TabIndex = 6;
+            this.bookTripBTN.Text = "Varaa matka";
+            this.bookTripBTN.UseVisualStyleBackColor = true;
+            this.bookTripBTN.Click += new System.EventHandler(this.bookTripBTN_Click);
+            // 
+            // bookingUC1
+            // 
+            this.bookingUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bookingUC1.Location = new System.Drawing.Point(0, 0);
+            this.bookingUC1.Name = "bookingUC1";
+            this.bookingUC1.Size = new System.Drawing.Size(1140, 412);
+            this.bookingUC1.TabIndex = 1;
             // 
             // startUC1
             // 
@@ -159,7 +204,10 @@ namespace TrainClient2
         private System.Windows.Forms.PictureBox pictureBox2;
 
         private Panel updatePanel;
+        private UserControls.bookingUC bookingUC1;
         private UserControls.startUC startUC1;
+        private Button bookTripBTN;
+        private Button settingsBTN;
     }
 }
 

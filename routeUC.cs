@@ -14,29 +14,44 @@ namespace TrainClient2.UserControls
     public partial class routeUC : UserControl
     {
         public static ArrayList cities = new ArrayList() { "Helsinki", "Joensuu", "Jyväskylä", "Kemi", "Kittilä", "Kouvola", "Kuopio", "Kuusamo", "Lahti", "Lappeenranta", "Mikkeli", "Oulu", "Pori", "Porvoo", "Rovaniemi", "Tampere", "Turku", "Vaasa" };
-        public static String departureCity;
+        public static int freeSeats = 10;
 
         public routeUC()
         {
             InitializeComponent();
         }
 
-
+        //Täytetään comboboxit
         private void routeUC_Load(object sender, EventArgs e)
         {
             foreach (String city in cities)
             {
                 startCB.Items.Add(city);
+                arriveCB.Items.Add(city);
+            }
+
+            for (int i = 1; i <= freeSeats; i++)
+            {
+                passengerNoCB.Items.Add(i);
             }
 
         }
-
-        private void departureOkBTN_Click(object sender, EventArgs e)
+        //
+        //luetaan comboboxien arvot
+        //
+        private void startCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Luetaan valittu lahtopaikka
-            departureCity = startCB.SelectedItem.ToString();
+            bookingUC.departureCity = startCB.SelectedItem.ToString();
+        }
 
-            //bookingUC.departureCityLbl.Text = "Lähtöasema: " + departureCity;
+        private void arriveCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bookingUC.arrivalCity = arriveCB.SelectedItem.ToString();
+        }
+
+        private void passengerNoCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bookingUC.passengerNo = passengerNoCB.SelectedItem.ToString();
         }
     }
 }
